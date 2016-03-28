@@ -31,6 +31,7 @@ void loop() {
   folkracer.updateMotors();//?
   unsigned long distance = encoderLeft.getDistance();//?
   distance = distance + encoderRight.getDistance();//?
+  distance = distance / 2;
   if (distance > 20) {//εαν η απόσταση που εχει διανυσει είναι >20
     if (distance < 30) {//εαν η απόσταση εχει διανυσει είναι <30 τότε:
       if (state1Done == false) {//εαν το 1Done είναι false(0) 
