@@ -9,19 +9,19 @@
 Τέλος, θα συνεχίσει να κινείται ευθεία, μέχρι να διανύσει συνολικά (από την αρχή δηλαδή της λειτουργίας του) 150 εκατοστά. */
 #include <Smartcar.h>
 
-Odometer encoderLeft(93), encoderRight(93); //Βάλτε τους δικούς σας παλμούς ανά μέτρο
-Gyroscope gyro(18); //Βάλτε την κατάλληλη τιμή σύμφωνα με το γυροσκόπιό σας
+Odometer encoderLeft(180), encoderRight(180); //Βάλτε τους δικούς σας παλμούς ανά μέτρο
+Gyroscope gyro(13); //Βάλτε την κατάλληλη τιμή σύμφωνα με το γυροσκόπιό σας
 Car folkracer;//Το όνομα του αυτοκινήτου
 boolean state1Done = false;//Η κατάσταση του 1Done είναι false(0)
 boolean state2Done = false;//Η κατάσταση του 2Done είναι false(0)
 
 void setup() {
-  gyro.attach(18);//?
+  gyro.attach(13);//?
   encoderLeft.attach(3); //Χρησιμοποιήστε τα σωστά pins!
   encoderRight.attach(2);//?
   encoderLeft.begin(93);//?
   encoderRight.begin(93);//?
-  gyro.begin(18);//?
+  gyro.begin(13);//?
   folkracer.begin(encoderLeft, encoderRight, gyro);//το αμάξι λειτουργεί με τα encoderLeft, encoderRight, gyro
   folkracer.enableCruiseControl();//?
   folkracer.setSpeed(0.5);//το αμάξι έχει ταχύτητα 0,5
