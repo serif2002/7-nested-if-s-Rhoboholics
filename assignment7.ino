@@ -16,8 +16,8 @@ boolean state1Done = false;//Η κατάσταση του 1Done είναι false
 boolean state2Done = false;//Η κατάσταση του 2Done είναι false(0)
 
 void setup() {
-  gyro.attach(18);//?
-  encoderLeft.attach(3); //Χρησιμοποιήστε τα σωστά pins!
+  gyro.attach(18);//sundeoumai to guroskopio
+  encoderLeft.attach(3); //sundeoumai to aristero encoder
   encoderRight.attach(2);//?
   encoderLeft.begin(93);//?
   encoderRight.begin(93);//?
@@ -43,17 +43,18 @@ void loop() {
     }
   }
   //TO-DO
-  if(distance==80||90){
-   folkracer.stop();
-   folkracer.rotate(90);
-   folkracer.setSpeed(0,5)
+  if(distance==80||90){ //an h apostash einai 80 h 90 kane kati
+   folkracer.stop(); //to amaxi tha stamatisei
+   folkracer.rotate(90); //to amaxi tha stripsei 90 moires
+   folkracer.setSpeed(0,5); //h taxithta pou tha proxoraei to amaxi
   }
   //Όταν το αυτοκινητάκι έχει διανύσει από 80 μέχρι 90 εκατοστά, τότε σταματήστε το και μετά περιστρέψτε το κατά 90 μοίρες
   //στα δεξιά. Στη συνέχεια, θέστε ταχύτητα 0.5 μέτρα το δευτερόλεπτο
   
   //TO-DO
   if(distance >150){
-   folkracer.stop()||state2Done=false;
+   folkracer.stop()
+   state2Done=true;
   }
   //Όταν το αυτοκινητάκι έχει διανύσει απόσταση μεγαλύτερη των 150 εκατοστών, τότε πείτε του να σταματήσει (ή εναλλακτικά θέστε       
   //ταχύτητα μηδέν)
